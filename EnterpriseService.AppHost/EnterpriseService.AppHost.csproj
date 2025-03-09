@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Sdk Name="Aspire.AppHost.Sdk" Version="9.0.0" />
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsAspireHost>true</IsAspireHost>
+    <UserSecretsId>578ff509-6121-45ed-aa34-2839b6b9862e</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EnterpriseService.Inventory.Api\EnterpriseService.Inventory.Api.csproj" />
+    <ProjectReference Include="..\EnterpriseService.Notificatioin.Api\EnterpriseService.Notificatioin.Api.csproj" />
+    <ProjectReference Include="..\EnterpriseService.Order.Api\EnterpriseService.OrderService.Api.csproj" />
+    <ProjectReference Include="..\EnterpriseService.ShippingService.Api\EnterpriseService.ShippingService.Api.csproj" />
+  </ItemGroup>
+
+</Project>

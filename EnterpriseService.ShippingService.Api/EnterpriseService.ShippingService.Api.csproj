@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EnterpriseService.Messaging\EnterpriseService.Messaging.csproj" />
+    <ProjectReference Include="..\EnterpriseService.ServiceDefaults\EnterpriseService.ServiceDefaults.csproj" />
   </ItemGroup>
 
 </Project>
