@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseService.Inventory
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseService.ShippingService.Api", "EnterpriseService.ShippingService.Api\EnterpriseService.ShippingService.Api.csproj", "{6EE3EFAD-9E9E-48AD-8F04-F695020E06F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseService.Notificatioin.Api", "EnterpriseService.Notificatioin.Api\EnterpriseService.Notificatioin.Api.csproj", "{9BB22FBB-074D-4741-B6D0-567BC043FC1E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{6EE3EFAD-9E9E-48AD-8F04-F695020E06F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EE3EFAD-9E9E-48AD-8F04-F695020E06F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EE3EFAD-9E9E-48AD-8F04-F695020E06F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BB22FBB-074D-4741-B6D0-567BC043FC1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BB22FBB-074D-4741-B6D0-567BC043FC1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BB22FBB-074D-4741-B6D0-567BC043FC1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BB22FBB-074D-4741-B6D0-567BC043FC1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +77,7 @@ Global
 		{520B774D-AE01-46D6-823D-56AF6D5B767D} = {2ACCAC14-0FD8-48E8-8242-FF3F4CBAD438}
 		{B7840176-1360-4ECB-9E59-16BCD6354A7D} = {E0170887-EE0C-413F-8551-AD7FEDE4C3E9}
 		{6EE3EFAD-9E9E-48AD-8F04-F695020E06F2} = {0FB3756E-4D76-422B-920B-F878D29DE637}
+		{9BB22FBB-074D-4741-B6D0-567BC043FC1E} = {2ACCAC14-0FD8-48E8-8242-FF3F4CBAD438}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {53D0E9AF-D305-484C-A1F9-2C730A706482}
