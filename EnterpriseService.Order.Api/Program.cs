@@ -27,35 +27,27 @@ builder.Services.AddMassTransit(x =>
 {
     var configuration = builder.Configuration;
 
-    var rabbitHost = configuration.GetValue<string>("MessageBus:Uri");
-    var username = configuration.GetValue<string>("MessageBus:Username");
-    var password = configuration.GetValue<string>("MessageBus:Password");
+    //var rabbitHost = configuration.GetValue<string>("MessageBus:Uri");
+    //var username = configuration.GetValue<string>("MessageBus:Username");
+    //var password = configuration.GetValue<string>("MessageBus:Password");
 
-    //x.AddConsumers(typeof(InventoryAdjusmentService).Assembly);
-    //x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(config =>
+    x.SetKebabCaseEndpointNameFormatter();
+    //x.UsingRabbitMq((context, config) =>
     //{
+    //    config.ConfigureEndpoints(context);
     //    config.Host(new Uri(rabbitHost), h =>
     //    {
     //        h.Username(username);
     //        h.Password(password);
     //    });
-    //}));
 
-    x.SetKebabCaseEndpointNameFormatter();
-    x.UsingRabbitMq((context, config) =>
+    //});
+    x.UsingRabbitMq((context, cfg) =>
     {
-        config.ConfigureEndpoints(context);
-        config.Host(new Uri(rabbitHost), h =>
-        {
-            h.Username(username);
-            h.Password(password);
-        });
-        //config.ReceiveEndpoint("cart", ep =>
-        //{
-        //    ep.PrefetchCount = 16;
-        //    ep.UseMessageRetry(r => r.Interval(2, new TimeSpan(0, 0, 10)));
-        //    ep.ConfigureConsumer<ShoppingCartConsumer>(context);
-        //});
+        var configuration = context.GetRequiredService<IConfiguration>();
+        var host = configuration.GetConnectionString("messaging");
+        cfg.Host(host);
+        cfg.ConfigureEndpoints(context);
     });
 });
 

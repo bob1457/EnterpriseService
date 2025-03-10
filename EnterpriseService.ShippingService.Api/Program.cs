@@ -15,20 +15,27 @@ builder.Services.AddMassTransit(x =>
 {
     var configuration = builder.Configuration;
 
-    var rabbitHost = configuration.GetValue<string>("MessageBus:Uri");
-    var username = configuration.GetValue<string>("MessageBus:Username");
-    var password = configuration.GetValue<string>("MessageBus:Password");
+    //var rabbitHost = configuration.GetValue<string>("MessageBus:Uri");
+    //var username = configuration.GetValue<string>("MessageBus:Username");
+    //var password = configuration.GetValue<string>("MessageBus:Password");
 
     x.SetKebabCaseEndpointNameFormatter();
     x.AddConsumer<ShippingServiceConsumer>(); // thi is only required for consumers
-    x.UsingRabbitMq((context, config) =>
+    //x.UsingRabbitMq((context, config) =>
+    //{
+    //    config.ConfigureEndpoints(context);
+    //    config.Host(new Uri(rabbitHost), h =>
+    //    {
+    //        h.Username(username);
+    //        h.Password(password);
+    //    });
+    //});
+    x.UsingRabbitMq((context, cfg) =>
     {
-        config.ConfigureEndpoints(context);
-        config.Host(new Uri(rabbitHost), h =>
-        {
-            h.Username(username);
-            h.Password(password);
-        });
+        var configuration = context.GetRequiredService<IConfiguration>();
+        var host = configuration.GetConnectionString("messaging");
+        cfg.Host(host);
+        cfg.ConfigureEndpoints(context);
     });
 });
 
